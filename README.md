@@ -1,7 +1,7 @@
 Archive Agent for use with Agentforce
 -------------------------------------
 
-Extends Salesforce [Agentforce](https://www.salesforce.com/agentforce/) with a custom action that processes unstructured data with AI. This example is covered in more detail within this [blog](https://blog.heroku.com/building-supercharged-agents-heroku-agentforce) and [video](https://youtu.be/mNgrdf1GX-w). Also checkout our other Agentforce demo and sample code [here](https://github.com/heroku-reference-apps/agentforce-archive-agent/edit/main/README.md#want-more).
+Extends Salesforce [Agentforce](https://www.salesforce.com/agentforce/) with a custom action that processes unstructured data with AI. This example is covered in more detail within this [blog](https://blog.heroku.com/building-supercharged-agents-heroku-agentforce) and [video](https://youtu.be/mNgrdf1GX-w). Also checkout our other Agentforce demo and sample code [here](https://github.com/heroku-reference-apps/agentforce-archive-agent/tree/main?tab=readme-ov-file#want-more).
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 

@@ -1,7 +1,7 @@
 Archive Agent for use with Agentforce
 -------------------------------------
 
-Extends Salesforce [Agentforce](https://www.salesforce.com/agentforce/) with a custom action that processes unstructured data with AI. This example is covered in more detail within this [blog](https://blog.heroku.com/building-supercharged-agents-heroku-agentforce) and [video](https://youtu.be/mNgrdf1GX-w).
+Extends Salesforce [Agentforce](https://www.salesforce.com/agentforce/) with a custom action that processes unstructured data with AI. This example is covered in more detail within this [blog](https://blog.heroku.com/building-supercharged-agents-heroku-agentforce) and [video](https://youtu.be/mNgrdf1GX-w). Also checkout our other Agentforce demo and sample code [here](https://github.com/heroku-reference-apps/agentforce-archive-agent/edit/main/README.md#want-more).
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -107,3 +107,7 @@ Before you can add your action to an agent (such as Einstein Copilot) you must a
 ### Testing
 
 You can now enter into the Agent or Agent Builder prompt some of the prompts shown at the top of this README. If you see any issues, try running the prompt from within the Agent Builder first and also check the Heroku logs for your API app.
+
+Want more?
+------------
+Good news! Since publishing this demo, we’ve also released an additional [demo video](https://www.youtube.com/watch?v=yd97A9GLFUA&t=2s) and [sample code](https://github.com/heroku-examples/agentforce-collage-agent), diving deeper into how Heroku enhances Agentforce agents' capabilities. In this expanded version of the popular [Coral Cloud Resort demo](https://trailhead.salesforce.com/content/learn/projects/quick-start-explore-the-coral-cloud-sample-app), vacationing guests can use Agentforce to browse and book unique experiences. With Heroku, the agent can even generate personalized adventure collages for each guest, showcasing how custom code on Heroku enables dynamic digital media creation directly within the Agentforce platform.

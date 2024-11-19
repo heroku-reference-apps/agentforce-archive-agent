@@ -64,49 +64,10 @@ Finally deploy the API to Heroku.
 
 More detailed instructions for how to deploy using Heroku Git can be found [here](https://devcenter.heroku.com/articles/git#create-a-heroku-remote).
 
-Knowing the API URL and OpenAPI Spec
------------------------------
-
-Once deployed, make sure you know the URL for your deployed API (Heroku app), including the path to your OpenAPI schema. The app URL is output after the deploy completes and can also be obtained by using the command ``heroku open``. The OpenAPI schema will be available on this URL path ``/v3/api-docs``.
-
-Adding to Agentforce
+Configure Agentforce
 --------------------
 
-These steps assume you have knowledge of **External Services**, **Permission Sets**, **Flow** and **Agent Builder**. If you are not familiar with these features, a future iteration of this example will include example metadata for the above steps that you can use to deploy using SFDX. 
-
-To create a custom agent action in Agent Builder you must first import the API using External Services and then create a simple Flow wrapper for your action. At the time of publishing this example support for External Service actions within Agent Builder had not been released, in the future the Flow wrapper will not be required.
-
-### Step 1. Create an External Credential
-
-This example uses HTTP Basic authentication, follow [these](https://help.salesforce.com/s/articleView?id=sf.nc_create_edit_basic_auth_ext_cred.htm&type=5) steps to set this up, using the user name and password above. Before moving on do not forget to create a Permission Set that exposes the principle you created in this step and then assign it to your user.
-
-### Step 2. Create an External Service
-
-Copy paste your OpenAPI schema into your clipboard and follow [these](https://help.salesforce.com/s/articleView?id=sf.external_services_register_json.htm&type=5) steps to import your API, using the External/Name Credential you created above when prompted.
-
-### Step 3. Create a Flow Action
-
-Create an Autolaunch Flow that calls the External Service action created by the platform as part of the previous step. The Flow should make public two properties a ``Query (string)`` and a ``QueryResult (string)`` and use the Assignment action in the Flow to copy the values from and to these properties before and after calling the the API. This [help topic](https://help.salesforce.com/s/articleView?id=sf.voice_conversation_intelligence_autolaunched_flow_setup.htm&type=5) describes how to create a basic auto launched flow that will be accessible from Agent Builder.
-
-### Step 4. Create an Agent Action
-
-Create an Agent action that leverages the Flow action created previously using [these](https://help.salesforce.com/s/articleView?id=sf.copilot_actions_custom_create_scratch.htm&type=5) steps. Here is an example of the type instructions to enter.
-- For **Agent Action Instructions** enter _Ability to extract, query and calculate information on historic invoice information_.
-- For **Query Instructions** enter _This is the query the user is requesting against the invoice information pass it directly through. Pass this through to the action directly and do not try to generate a SQL query from it_.
-- For **Query Result** enter _This is the response in JSON format, extract the value and display accordingly based on the query the user made_.
-
-### Step 5. Adding Agent Action to an Agent 
-
-Before you can add your action to an agent (such as Einstein Copilot) you must add it to a topic. It is recommended you create a new topic for this action. The steps are described [here](https://help.salesforce.com/s/articleView?id=sf.copilot_actions_add.htm&type=5).
-- For **Topic Label** enter _Query Historic Archived Invoices_.
-- For **Classification Description** enter _Actions in this topic have the ability to access historic archived information, such as invoices. Users may ask about invoice amounts and products included in the invoices_.
-- For **Scope** enter _Your job is to provide information about historic invoices, such as products and invoice amounts_.
-- For **Instructions** enter _Pass the query unmodified directly to the action_.
-- For **Instructions** enter _There is only one action in this topic please use it_.
-
-### Testing
-
-You can now enter into the Agent or Agent Builder prompt some of the prompts shown at the top of this README. If you see any issues, try running the prompt from within the Agent Builder first and also check the Heroku logs for your API app.
+Complete this [tutorial](https://github.com/heroku-examples/heroku-agentforce-tutorial?tab=readme-ov-file#creating-agentforce-custom-actions-with-heroku) to learn how configure this action within your org.
 
 Want more?
 ------------
